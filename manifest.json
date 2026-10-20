@@ -1,0 +1,17 @@
+{
+  "name": "NIGHTFALL // 個人端末",
+  "short_name": "NIGHTFALL",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#080d12",
+  "theme_color": "#080d12",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
