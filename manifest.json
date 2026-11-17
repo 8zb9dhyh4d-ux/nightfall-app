@@ -3,8 +3,8 @@
   "short_name": "NIGHTFALL",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#080d12",
-  "theme_color": "#080d12",
+  "background_color": "#05060f",
+  "theme_color": "#05060f",
   "lang": "ja",
   "icons": [
     {

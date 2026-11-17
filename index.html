@@ -3,23 +3,104 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#080d12">
+<meta name="theme-color" content="#05060f">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="NIGHTFALL">
 <link rel="manifest" href="manifest.json">
 <title>NIGHTFALL // 個人端末</title>
 <style>
-:root{--bg:#080d12;--panel:#101820;--panel2:#0c131a;--line:#263844;--text:#e2edf0;--muted:#8ba0aa;--cyan:#5de5d0;--red:#ff5f6d;--gold:#e6c56c;--green:#7de0a3}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#12232b 0,#080d12 48%);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;min-height:100vh;padding-bottom:calc(112px + env(safe-area-inset-bottom))}
-button,input,textarea,select{font:inherit}button{cursor:pointer;color:var(--text);background:#15242d;border:1px solid #35505c;border-radius:10px;padding:11px 13px;min-height:44px}button:active{transform:scale(.98)}button.primary{background:#103c3b;border-color:#3c9f92;color:#bafff2}button.danger{border-color:#873d48;color:#ff9da6;background:#35151b}button.small{padding:7px 10px;min-height:36px;font-size:12px}input,textarea,select{width:100%;background:#081016;border:1px solid #2d414d;border-radius:9px;color:var(--text);padding:12px;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--cyan)}textarea{resize:vertical;min-height:80px}label{display:block;color:var(--muted);font-size:12px;margin:10px 0 5px}.wrap{max-width:760px;margin:auto;padding:0 15px}.top{padding:calc(16px + env(safe-area-inset-top)) 0 12px;border-bottom:1px solid #23343d;background:#080d12e8}.brand{display:flex;align-items:center;gap:11px}.sigil{width:43px;height:43px;border:1px solid var(--cyan);display:grid;place-items:center;color:var(--cyan);font-size:22px;clip-path:polygon(50% 0,100% 25%,86% 78%,50% 100%,14% 78%,0 25%)}.brand h1{font-size:17px;letter-spacing:3px;margin:0}.sub{color:var(--muted);font-size:10px;letter-spacing:2px}.status{margin-left:auto;text-align:right;font:10px monospace;color:var(--green)}main{padding-top:16px}.eyebrow{font:11px monospace;letter-spacing:2px;color:var(--cyan);margin:4px 0 12px}.page-title{font-size:23px;letter-spacing:1px;margin:0 0 4px}.desc{color:var(--muted);font-size:13px;margin:0 0 18px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.panel{background:linear-gradient(145deg,#121e27,#0c1319);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 8px 22px #0002}.panel h3{font-size:13px;margin:0 0 10px;color:#c8d9de;letter-spacing:1px}.metric{font-size:27px;font-weight:700;color:var(--cyan);letter-spacing:1px}.tiny{font-size:11px;color:var(--muted)}.tag{display:inline-block;border:1px solid #38515b;border-radius:5px;padding:3px 7px;font-size:10px;color:#b4c8cf;margin:2px}.tag.red{border-color:#743e47;color:#ff9da6}.tag.gold{border-color:#655532;color:var(--gold)}.row{display:flex;gap:8px;align-items:center}.row>*{min-width:0}.between{justify-content:space-between}.stack{display:flex;flex-direction:column;gap:9px}.item{border:1px solid #273943;border-radius:11px;padding:12px;background:#0a1218}.item-title{font-weight:650;margin-bottom:5px}.item p{margin:4px 0;color:#a9bbc2;font-size:12px;white-space:pre-wrap}.item.done{opacity:.56}.item.done .item-title{text-decoration:line-through}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}.formgrid .full{grid-column:1/-1}.empty{border:1px dashed #334752;border-radius:10px;padding:20px;text-align:center;color:var(--muted);font-size:13px}.meter{height:6px;background:#1b2a33;border-radius:8px;overflow:hidden;margin-top:9px}.meter span{display:block;height:100%;background:linear-gradient(90deg,#298c83,var(--cyan))}.quote{border-left:2px solid var(--red);padding:8px 12px;color:#d7c4c8;font-size:13px}.nav{position:fixed;z-index:20;bottom:0;left:0;right:0;background:#080d12f5;backdrop-filter:blur(16px);border-top:1px solid #30434d;padding:8px 10px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;max-width:760px;margin:auto}.nav button{display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:8px 4px;font-size:12px;background:#101820;border-color:#263944;color:#a8bbc3}.nav button.active{background:#103b3a;border-color:var(--cyan);color:#aafff1;box-shadow:inset 0 0 18px #2ce6c010}.nav .ico{font-size:16px}.nav .navlabel{white-space:nowrap}.notice{border:1px solid #634b2d;background:#211b11;border-radius:10px;padding:12px;color:#e8d7a8;font-size:12px}.toast{position:fixed;z-index:30;left:16px;right:16px;bottom:125px;background:#173e3a;border:1px solid var(--cyan);padding:12px;border-radius:10px;text-align:center;display:none}.redacted{background:#030506;color:#030506;border-radius:3px;cursor:pointer;padding:0 4px}.redacted.revealed{background:#39252b;color:#ffc3c9}.seal{font-size:42px;color:var(--cyan);text-align:center;margin:10px}.line{height:1px;background:#263943;margin:14px 0}.muted{color:var(--muted)}.success{color:var(--green)}.warning{color:var(--gold)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-@media(min-width:600px){.nav{border:1px solid #30434d;border-bottom:0;border-radius:16px 16px 0 0;left:50%;transform:translateX(-50%);width:100%;padding-left:18px;padding-right:18px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+:root{--bg:#05060f;--panel:#0a0e22;--panel2:#070a18;--line:#22336e;--text:#d9f6ff;--muted:#7d8fc7;--cyan:#00f0ff;--mag:#ff2bd6;--acid:#d9ff3d;--red:#ff3860;--gold:#d9ff3d;--green:#3dffb8;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:radial-gradient(ellipse 80% 50% at 15% -5%,#00f0ff14 0,transparent 55%),radial-gradient(ellipse 70% 45% at 90% 0,#ff2bd612 0,transparent 55%),radial-gradient(ellipse at bottom,#0a1030 0,var(--bg) 55%);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;min-height:100vh;padding-bottom:calc(112px + env(safe-area-inset-bottom))}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(#00f0ff09 1px,transparent 1px),linear-gradient(90deg,#00f0ff09 1px,transparent 1px);background-size:42px 42px}
+body::after{content:"";position:fixed;inset:0;z-index:55;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 2px,#00f0ff06 2px 3px,transparent 3px 4px)}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer;color:var(--text);background:#0b1130;border:1px solid #2b3f7f;padding:11px 13px;min-height:44px;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);transition:box-shadow.15s,background.15s}
+button:active{transform:scale(.98)}
+button.primary{background:#04222b;border-color:var(--cyan);color:#aefcff;box-shadow:0 0 12px #00f0ff30,inset 0 0 14px #00f0ff14}
+button.danger{border-color:var(--mag);color:#ffc7f4;background:#2b0a26;box-shadow:0 0 12px #ff2bd626,inset 0 0 14px #ff2bd612}
+button.small{padding:7px 10px;min-height:36px;font-size:12px}
+input,textarea,select{width:100%;background:#04060f;border:1px solid #24356b;color:var(--text);padding:12px;outline:none;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+input:focus,textarea:focus,select:focus{border-color:var(--cyan);box-shadow:0 0 10px #00f0ff45}
+textarea{resize:vertical;min-height:80px}
+label{display:block;color:var(--muted);font-size:12px;margin:10px 0 5px;font-family:var(--mono);letter-spacing:1px}
+.wrap{max-width:760px;margin:auto;padding:0 15px;position:relative;z-index:1}
+.top{padding:calc(16px + env(safe-area-inset-top)) 0 12px;border-bottom:1px solid var(--line);background:#05060fd9;box-shadow:0 1px 18px #00f0ff14;position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:11px}
+.sigil{width:43px;height:43px;border:1px solid var(--cyan);display:grid;place-items:center;color:var(--cyan);font-size:22px;background:#00f0ff0d;box-shadow:0 0 14px #00f0ff40,inset 0 0 10px #00f0ff18;clip-path:polygon(50% 0,100% 25%,86% 78%,50% 100%,14% 78%,0 25%)}
+.brand h1{font-size:17px;letter-spacing:3px;margin:0;font-family:var(--mono);text-shadow:0 0 10px #00f0ff66}
+.sub{color:var(--muted);font-size:10px;letter-spacing:2px;font-family:var(--mono)}
+.status{margin-left:auto;text-align:right;font:10px var(--mono);color:var(--green);text-shadow:0 0 8px #3dffb866}
+main{padding-top:16px}
+.eyebrow{font:11px var(--mono);letter-spacing:2px;color:var(--cyan);margin:4px 0 12px;text-shadow:0 0 8px #00f0ff55}
+.page-title{font-size:23px;letter-spacing:1px;margin:0 0 4px;position:relative;text-shadow:0 0 14px #00f0ff30}
+.page-title::before,.page-title::after{content:attr(data-text);position:absolute;left:0;top:0;width:100%;overflow:hidden;pointer-events:none}
+.page-title::before{color:var(--mag);z-index:-1;animation:glitch-a 2.6s infinite steps(2,end)}
+.page-title::after{color:var(--cyan);z-index:-2;animation:glitch-b 3.1s infinite steps(2,end)}
+@keyframes glitch-a{0%,86%{transform:none;clip-path:inset(0 0 0 0);opacity:0}88%{transform:translate(-2px,1px);clip-path:inset(12% 0 55% 0);opacity:.8}92%{transform:translate(2px,-1px);clip-path:inset(60% 0 8% 0);opacity:.8}96%,100%{transform:none;opacity:0}}
+@keyframes glitch-b{0%,80%{transform:none;opacity:0}82%{transform:translate(2px,0);clip-path:inset(35% 0 30% 0);opacity:.7}86%{transform:translate(-2px,1px);clip-path:inset(5% 0 78% 0);opacity:.7}90%,100%{transform:none;opacity:0}}
+.desc{color:var(--muted);font-size:13px;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.panel{background:linear-gradient(160deg,#0b1030,#060818);border:1px solid var(--line);padding:14px;margin-bottom:12px;box-shadow:inset 0 0 24px #00f0ff08,0 0 16px #00000088;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px))}
+.panel h3{font-size:13px;margin:0 0 10px;color:#bfe9ff;letter-spacing:1px;font-family:var(--mono)}
+.metric{font-size:27px;font-weight:700;color:var(--cyan);letter-spacing:1px;font-family:var(--mono);text-shadow:0 0 12px #00f0ff77}
+.tiny{font-size:11px;color:var(--muted)}
+.tag{display:inline-block;border:1px solid #2b3f7f;padding:3px 7px;font-size:10px;color:#a9c6ff;margin:2px;font-family:var(--mono);clip-path:polygon(4px 0,100% 0,100% calc(100% - 4px),calc(100% - 4px) 100%,0 100%,0 4px)}
+.tag.red{border-color:var(--mag);color:#ff9de2}
+.tag.gold{border-color:#5c6b14;color:var(--acid)}
+.tag.alert{background:var(--acid);border-color:var(--acid);color:#0a0f00;font-weight:700;box-shadow:0 0 10px #d9ff3d88;animation:blink 1.1s steps(2,start) infinite}
+@keyframes blink{50%{opacity:.45}}
+.row{display:flex;gap:8px;align-items:center}
+.row>*{min-width:0}
+.between{justify-content:space-between}
+.stack{display:flex;flex-direction:column;gap:9px}
+.item{border:1px solid #27356b;padding:12px;background:#070b1d;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.item-title{font-weight:650;margin-bottom:5px}
+.item p{margin:4px 0;color:#a9bbdd;font-size:12px;white-space:pre-wrap}
+.item.done{opacity:.56}
+.item.done.item-title{text-decoration:line-through}
+.item.overdue{border-color:var(--acid);border-left:4px solid var(--acid);box-shadow:inset 0 0 20px #d9ff3d12,0 0 12px #d9ff3d22}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.formgrid.full{grid-column:1/-1}
+.empty{border:1px dashed #2b3f7f;padding:20px;text-align:center;color:var(--muted);font-size:13px}
+.meter{height:6px;background:#101736;overflow:hidden;margin-top:9px}
+.meter span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--mag));box-shadow:0 0 8px #00f0ff66}
+.quote{border-left:2px solid var(--mag);background:#ff2bd60a;padding:8px 12px;color:#f3d9f7;font-size:13px}
+.nav{position:fixed;z-index:20;bottom:0;left:0;right:0;background:#05060ff5;backdrop-filter:blur(16px);border-top:1px solid var(--line);box-shadow:0 -1px 18px #00f0ff14;padding:8px 10px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;max-width:760px;margin:auto}
+.nav button{display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:8px 4px;font-size:12px;background:#0a0e22;border-color:#22336e;color:#8fa5d9}
+.nav button.active{background:#04222b;border-color:var(--cyan);color:#aefcff;box-shadow:inset 0 0 18px #00f0ff22,0 0 10px #00f0ff30}
+.nav.ico{font-size:16px}
+.nav.navlabel{white-space:nowrap}
+.notice{border:1px solid #5c6b14;background:#141603;padding:12px;color:#eef7b0;font-size:12px;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.toast{position:fixed;z-index:80;left:16px;right:16px;bottom:125px;background:#04222b;border:1px solid var(--cyan);box-shadow:0 0 18px #00f0ff44;padding:12px;text-align:center;display:none;font-family:var(--mono);font-size:13px}
+.redacted{background:#000;color:#000;border:1px solid #223;cursor:pointer;padding:0 4px}
+.redacted.revealed{background:#2b0a26;color:#ffc3f2;border-color:var(--mag)}
+.seal{font-size:42px;color:var(--cyan);text-align:center;margin:10px;text-shadow:0 0 18px #00f0ff88}
+.line{height:1px;background:#22336e;margin:14px 0;box-shadow:0 0 6px #00f0ff22}
+.muted{color:var(--muted)}
+.success{color:var(--green)}
+.warning{color:var(--acid)}
+.mono{font-family:var(--mono)}
+.ratiobar{display:flex;height:10px;border:1px solid var(--line);overflow:hidden;margin:8px 0 4px;background:#04060f}
+.ratiobar span{display:block;height:100%}
+.chip{display:inline-block;border:1px solid var(--mag);color:#ffb7ef;padding:3px 9px;font-size:11px;margin:2px;font-family:var(--mono);border-radius:999px;background:#ff2bd60d;box-shadow:0 0 8px #ff2bd622}
+.insight{border:1px solid #6e2363;background:linear-gradient(160deg,#170a24,#0a0618);padding:12px;margin-top:10px;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));box-shadow:inset 0 0 20px #ff2bd60d}
+.insight h4{margin:0 0 8px;font-size:12px;color:#ff9de2;font-family:var(--mono);letter-spacing:1px}
+.insight p{margin:6px 0;color:#e8d9ff;font-size:12px}
+.lamp{width:26px;height:26px;border-radius:50%;border:2px solid #2b3f7f;background:#0a0e22;flex:none;transition:background.05s,box-shadow.05s}
+.lamp.on{background:var(--cyan);border-color:#aefcff;box-shadow:0 0 18px var(--cyan),0 0 38px #00f0ff66}
+#flashFx{position:fixed;inset:0;z-index:40;pointer-events:none;background:radial-gradient(ellipse at center,#00f0ff30 0,transparent 70%);opacity:0}
+@media(min-width:600px){.nav{border:1px solid var(--line);border-bottom:0;left:50%;transform:translateX(-50%);width:100%;padding-left:18px;padding-right:18px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.page-title::before,.page-title::after{display:none}.tag.alert{animation:none}*{transition:none!important}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap brand"><div class="sigil" id="brandSigil">✧</div><div><h1 id="brandName">NIGHTFALL</h1><div class="sub">PERSONAL INTELLIGENCE TERMINAL</div></div><div class="status">● SECURE CHANNEL<br><span id="clock">--:--:--</span></div></div></header>
 <main class="wrap" id="app"></main>
 <nav class="nav" id="nav" aria-label="メインメニュー"></nav>
+<div id="flashFx"></div>
 <div class="toast" id="toast" role="status"></div>
 <script>
 const $=s=>document.querySelector(s);
@@ -33,53 +114,127 @@ const defaults={org:"NIGHTFALL",operator:"PHANTOM",mission:"世界の均衡を�
 let state;
 try{state={...defaults,...JSON.parse(localStorage.getItem("nightfall-state")||"{}")}}catch{state={...defaults}}
 if(!state.missions)state.missions=defaults.missions;if(!state.subjects)state.subjects=[];if(!state.logs)state.logs=[];if(!state.docs)state.docs=defaults.docs;
-let page="home", filter="all", cipherResult="";
+let page="home", filter="all", cipherResult="", sortMode="reg", docQuery="";
 const navItems=[["home","⌂","司令室"],["missions","▤","任務管理"],["people","◎","人物分析局"],["cipher","⌁","極秘通信室"],["archive","▣","機密文書庫"],["settings","⚙","組織設定"]];
 function save(){localStorage.setItem("nightfall-state",JSON.stringify(state))}
 function esc(s=""){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function stamp(){return new Date().toLocaleString("ja-JP",{hour12:false})}
 function log(action,detail=""){state.logs.unshift({at:stamp(),action,detail});state.logs=state.logs.slice(0,100);save()}
 function toast(t){let el=$("#toast");el.textContent=t;el.style.display="block";setTimeout(()=>el.style.display="none",2300)}
-function go(p){page=p;render();window.scrollTo({top:0,behavior:"smooth"})}
+function go(p){page=p;stopMorse();render();window.scrollTo({top:0,behavior:"smooth"})}
 function rate(){let n=state.missions.length;return n?Math.round(state.missions.filter(m=>m.done).length/n*100):0}
-function overdue(){let today=new Date().toISOString().slice(0,10);return state.missions.filter(m=>!m.done&&m.due&&m.due<today).length}
-function prophecy(){return ["観測される者は、すでに観測を始めている。","沈黙は拒絶ではない。次の一手を隠すための幕だ。","小さな違和感を記録せよ。未来はそこから分岐する。","本日の予言：予定外の事象こそ、最重要情報となる。","力を誇示するな。結果だけが世界を書き換える。","未完了の任務は、夢の中でも追跡してくる。"][Math.floor(Math.random()*6)]}
+function todayStr(){return new Date().toISOString().slice(0,10)}
+function isOverdue(m){return!m.done&&m.due&&m.due<todayStr()}
+function overdue(){return state.missions.filter(isOverdue).length}
+const flavorLines=["観測される者は、すでに観測を始めている。","沈黙は拒絶ではない。次の一手を隠すための幕だ。","小さな違和感を記録せよ。未来はそこから分岐する。","予定外の事象こそ、最重要情報となる。","力を誇示するな。結果だけが世界を書き換える。","未完了の任務は、夢の中でも追跡してくる。"];
+function oracle(){let act=state.missions.filter(m=>!m.done).length,ov=overdue(),r=rate(),subs=state.subjects.length,docs=state.docs.length;
+let scan=`観測網スキャン完了 ― 未完了任務 ${act} 件 / 期限超過 ${ov} 件 / 達成率 ${r}% / 観測対象 ${subs} 名 / 封印文書 ${docs} 件。`;
+let read=ov>0?`期限超過が ${ov} 件検出された。影は濃くなっている。最優先で回収せよ。`:act===0?"未完了任務ゼロ。完全な静寂だ。次の作戦の種をまく好機である。":r>=80?"達成率は高水準。網は安定している。この静けさの中で、次の一手を仕込め。":`進行中の任務が ${act} 件ある。焦るな。一つずつ、確実に潰していけ。`;
+let fl=flavorLines[Math.floor(Math.random()*flavorLines.length)];
+return `${scan} ${read} ― ${fl}`}
 function nav(){ $("#nav").innerHTML=navItems.map(([id,ico,label])=>`<button class="${page===id?"active":""}" onclick="go('${id}')"><span class="ico">${ico}</span><span class="navlabel">${label}</span></button>`).join("")}
-function shell(kicker,title,desc,body){return `<div class="eyebrow">${kicker}</div><h2 class="page-title">${title}</h2><p class="desc">${desc}</p>${body}`}
-function missionCard(m){return `<article class="item ${m.done?"done":""}"><div class="row between"><div class="item-title">${esc(m.title)}</div><span class="tag ${m.priority==="高"?"red":m.priority==="最重要"?"red": "gold"}">${esc(m.priority)}脅威</span></div><p>作戦期限：${m.due?esc(m.due):"未設定"}　/　${m.done?'<span class="success">完了</span>':'<span class="warning">進行中</span>'}</p>${m.plan?`<p>${esc(m.plan)}</p>`:""}${m.success?`<p>成功条件：${esc(m.success)}</p>`:""}<div class="row" style="margin-top:9px">${m.done?`<button class="small" onclick="toggleMission(${m.id})">未完了に戻す</button>`:`<button class="small primary" onclick="toggleMission(${m.id})">✓ 任務達成</button>`}<button class="small" onclick="editPlan(${m.id})">作戦計画</button><button class="small danger" onclick="deleteMission(${m.id})">破棄</button></div></article>`}
-function home(){let active=state.missions.filter(m=>!m.done);return shell("COMMAND CENTER // 00","司令室","すべての事象は、記録された瞬間から制御可能になる。",`
+function shell(kicker,title,desc,body){return `<div class="eyebrow">${kicker}</div><h2 class="page-title" data-text="${title}">${title}</h2><p class="desc">${desc}</p>${body}`}
+function missionCard(m){let od=isOverdue(m);return `<article class="item ${m.done?"done":""} ${od?"overdue":""}"><div class="row between"><div class="item-title">${esc(m.title)}</div><span><span class="tag ${m.priority==="高"?"red":m.priority==="最重要"?"red": "gold"}">${esc(m.priority)}脅威</span>${od?'<span class="tag alert">⚠ 期限超過</span>':""}</span></div><p>作戦期限：${m.due?(od?`<span style="color:var(--acid);font-weight:700">${esc(m.due)}</span>`:esc(m.due)):"未設定"}　/　${m.done?'<span class="success">完了</span>':'<span class="warning">進行中</span>'}</p>${m.plan?`<p>${esc(m.plan)}</p>`:""}${m.success?`<p>成功条件：${esc(m.success)}</p>`:""}<div class="row" style="margin-top:9px">${m.done?`<button class="small" onclick="toggleMission(${m.id})">未完了に戻す</button>`:`<button class="small primary" onclick="toggleMission(${m.id})">✓ 任務達成</button>`}<button class="small" onclick="editPlan(${m.id})">作戦計画</button><button class="small danger" onclick="deleteMission(${m.id})">破棄</button></div></article>`}
+function emergencyTarget(){let overs=state.missions.filter(isOverdue).sort((a,b)=>a.due<b.due?-1:1);if(overs.length)return{kind:"overdue",m:overs[0]};let act=state.missions.filter(m=>!m.done);if(act.length){let pri={"最重要":0,"高":1,"中":2,"低":3};act.sort((a,b)=>((pri[a.priority]??2)-(pri[b.priority]??2))||((a.due||"9999")<(b.due||"9999")?-1:1));return{kind:"active",m:act[0]}}return null}
+function home(){let active=state.missions.filter(m=>!m.done);let tgt=emergencyTarget();return shell("COMMAND CENTER // 00","司令室","すべての事象は、記録された瞬間から制御可能になる。",`
 <div class="panel"><div class="row between"><div><div class="tiny">OPERATIVE CODENAME</div><div style="font-size:22px;letter-spacing:3px">${esc(state.operator||"PHANTOM")}</div><span class="tag">階級：${rank()}</span></div><div class="seal">${esc(state.crest||"✧")}</div></div><div class="line"></div><div class="tiny">組織指令</div><div>${esc(state.mission)}</div></div>
-<div class="grid"><div class="panel"><div class="tiny">進行中の任務</div><div class="metric">${active.length}</div></div><div class="panel"><div class="tiny">作戦成功率</div><div class="metric">${rate()}%</div><div class="meter"><span style="width:${rate()}%"></span></div></div><div class="panel"><div class="tiny">期限超過</div><div class="metric" style="color:${overdue()?"var(--red)":"var(--green)"}">${overdue()}</div></div><div class="panel"><div class="tiny">記録ログ</div><div class="metric">${state.logs.length}</div></div></div>
+<div class="grid"><div class="panel"><div class="tiny">進行中の任務</div><div class="metric">${active.length}</div></div><div class="panel"><div class="tiny">作戦成功率</div><div class="metric">${rate()}%</div><div class="meter"><span style="width:${rate()}%"></span></div></div><div class="panel"><div class="tiny">期限超過</div><div class="metric" style="color:${overdue()?"var(--red)":"var(--green)"};text-shadow:0 0 12px currentColor">${overdue()}</div></div><div class="panel"><div class="tiny">記録ログ</div><div class="metric">${state.logs.length}</div></div></div>
 <div class="panel"><div class="row between"><h3>本日のデイリーブリーフィング</h3><span class="tag">${new Date().toLocaleDateString("ja-JP")}</span></div><p class="tiny">未完了任務：${active.length}件 / 期限超過：${overdue()}件 / 達成率：${rate()}%</p>${active.slice(0,3).map(m=>`<div class="row" style="margin:8px 0"><span class="tag ${m.priority==="高"?"red":"gold"}">${esc(m.priority)}</span><span>${esc(m.title)}</span></div>`).join("")||'<p class="success">現在、未完了任務なし。よくやった、エージェント。</p>'}<button class="primary" style="width:100%;margin-top:8px" onclick="go('missions')">任務管理を開く →</button></div>
-<div class="panel"><h3>▰ 予言受信機</h3><div class="quote" id="prophecy">${prophecy()}</div><button class="small" style="margin-top:10px" onclick="$('#prophecy').textContent=prophecy()">再受信</button></div>
-<div class="panel"><h3>緊急指令</h3><p class="tiny">押下すると、ランダムな緊急任務が作戦一覧に追加される。</p><button class="danger" style="width:100%" onclick="emergency()">⚠ 緊急指令を受信</button></div>
+<div class="panel"><h3>🔮 オラクル // ORACLE</h3><div class="quote" id="oracleText">${oracle()}</div><button class="small" style="margin-top:10px" onclick="$('#oracleText').textContent=oracle()">再解析</button></div>
+<div class="panel"><h3>緊急指令</h3><p class="tiny">${tgt?(tgt.kind==="overdue"?`現在、期限超過の任務が ${overdue()} 件存在する。最優先ターゲット：『${esc(tgt.m.title)}』`:`進行中の任務『${esc(tgt.m.title)}』を最優先ターゲットとして検出。`):"未完了の任務は存在しない。受信時は定型の緊急指令を生成する。"}</p><button class="danger" style="width:100%" onclick="emergency()">⚠ 緊急指令を受信</button></div>
 <div class="panel"><h3>直近の行動ログ</h3>${state.logs.slice(0,4).map(l=>`<p class="tiny mono">${esc(l.at)} — ${esc(l.action)} ${esc(l.detail)}</p>`).join("")||'<p class="tiny">記録はまだない。</p>'}</div>`)}
 function rank(){let n=state.missions.filter(m=>m.done).length;return n>=20?"S級執行官":n>=10?"上級工作員":n>=5?"特務工作員":n>=1?"観測者":"候補生"}
-function missions(){let arr=state.missions.filter(m=>filter==="all"||(filter==="active"&&!m.done)||(filter==="done"&&m.done));return shell("MISSION CONTROL // 01","任務管理","ToDoなどという俗称は不要だ。これは任務である。",`
+function missions(){let arr=state.missions.filter(m=>filter==="all"||(filter==="active"&&!m.done)||(filter==="done"&&m.done));let pri={"最重要":0,"高":1,"中":2,"低":3};
+if(sortMode==="due")arr.sort((a,b)=>((a.due||"9999-99-99")<(b.due||"9999-99-99")?-1:(a.due||"9999-99-99")>(b.due||"9999-99-99")?1:0)||(b.created-a.created));
+else if(sortMode==="threat")arr.sort((a,b)=>((pri[a.priority]??2)-(pri[b.priority]??2))||(b.created-a.created));
+return shell("MISSION CONTROL // 01","任務管理","ToDoなどという俗称は不要だ。これは任務である。",`
 <div class="panel"><h3>新規任務の登録</h3><form onsubmit="addMission(event)"><label>任務名</label><input id="mtitle" required maxlength="100" placeholder="例：観測対象の資料を整理せよ"><div class="formgrid"><div><label>脅威レベル（優先度）</label><select id="mpriority"><option>低</option><option selected>中</option><option>高</option><option>最重要</option></select></div><div><label>作戦期限</label><input id="mdue" type="date"></div><div class="full"><label>作戦計画（手順）</label><textarea id="mplan" placeholder="実施する手順を記録する"></textarea></div><div class="full"><label>成功条件</label><input id="msuccess" placeholder="何をもって完了とするか"></div></div><button class="primary" style="width:100%;margin-top:12px">＋ 任務を登録</button></form></div>
-<div class="row" style="margin:14px 0">${[["all","すべて"],["active","進行中"],["done","達成済み"]].map(([v,l])=>`<button class="small ${filter===v?"primary":""}" onclick="filter='${v}';render()">${l}</button>`).join("")}<span class="tiny" style="margin-left:auto">${arr.length}件</span></div>
+<div class="row" style="margin:14px 0 6px">${[["all","すべて"],["active","進行中"],["done","達成済み"]].map(([v,l])=>`<button class="small ${filter===v?"primary":""}" onclick="filter='${v}';render()">${l}</button>`).join("")}<span class="tiny" style="margin-left:auto">${arr.length}件</span></div>
+<div class="row" style="margin:0 0 14px"><span class="tiny" style="flex:none">並び替え</span><select id="sortSel" style="flex:1" onchange="sortMode=this.value;render()"><option value="reg" ${sortMode==="reg"?"selected":""}>登録順（新しい順）</option><option value="due" ${sortMode==="due"?"selected":""}>期限順（近い順）</option><option value="threat" ${sortMode==="threat"?"selected":""}>脅威レベル順（高い順）</option></select></div>
 <div class="stack">${arr.map(missionCard).join("")||'<div class="empty">該当する任務は存在しない。</div>'}</div>`)}
+const stopWords=new Set(["こと","もの","ため","よう","です","ます","した","して","され","から","まで","など","これ","それ","あれ","この","その","あの","とき","今日","明日","昨日","自分","相手","記録","観測","対象","本人","発言","事実","仮説","について","として","による","ました","だった","ある","いる","なる","さん","氏名"]);
+function topWords(texts,n=6){let freq={};let runs=texts.join(" ").match(/[一-龯]{2,}|[ァ-ヶー]{2,}|[A-Za-z]{3,}/g)||[];for(let run of runs){let grams=new Set();if(run.length<=3)grams.add(run);else{for(let i=0;i+2<=run.length;i++)grams.add(run.slice(i,i+2));for(let i=0;i+3<=run.length;i++)grams.add(run.slice(i,i+3))}for(let g of grams){if(stopWords.has(g))continue;freq[g]=(freq[g]||0)+1}}
+return Object.entries(freq).sort((a,b)=>b[1]-a[1]||b[0].length-a[0].length).slice(0,n)}
+function ratioBar(s){let t=s.notes.length;if(!t)return"";let f=s.notes.filter(n=>n.type==="観察事実").length,st=s.notes.filter(n=>n.type==="本人の発言").length;let fp=Math.round(f/t*100),sp=Math.round(st/t*100),hp=Math.max(0,100-fp-sp);
+return `<div class="ratiobar"><span style="width:${fp}%;background:var(--cyan);box-shadow:0 0 8px #00f0ff66"></span><span style="width:${sp}%;background:var(--mag);box-shadow:0 0 8px #ff2bd666"></span><span style="width:${hp}%;background:var(--acid);box-shadow:0 0 8px #d9ff3d66"></span></div><div class="tiny">事実 ${fp}% / 発言 ${sp}% / 仮説 ${hp}%</div>`}
+function analyzeSubject(s){let notes=s.notes,total=notes.length;let lines=[];
+if(!total){lines.push("データ不足：観測記録がゼロのため、解析ユニットは沈黙を保つ。まず1件、見たままの事実を記録せよ。");return lines}
+let f=notes.filter(n=>n.type==="観察事実").length,st=notes.filter(n=>n.type==="本人の発言").length,h=notes.filter(n=>n.type==="未検証の仮説").length;
+let fp=Math.round(f/total*100),sp=Math.round(st/total*100),hp=Math.round(h/total*100);
+if(hp>=50)lines.push(`⚠ 情報汚染の警告：仮説が全体の${hp}%を占め、観測事実（${fp}%）を上回っている。仮説は検証されるまで隔離し、事実と混ぜるな。`);
+else if(fp<30)lines.push(`観測事実の不足：事実は全体の${fp}%のみ。推測ではなく「見たこと・起きたこと」の蓄積を優先せよ。`);
+else if(sp>=50)lines.push(`発言記録が中心の構成（${sp}%）。言葉だけでなく、発言と実際の行動の一致・不一致を観測すると解析精度が上がる。`);
+else lines.push(`記録バランスは安定圏内（事実 ${fp}% / 発言 ${sp}% / 仮説 ${hp}%）。この配分を維持せよ。`);
+let words=topWords(notes.map(n=>n.text));
+if(words.length)lines.push(`頻出テーマ：${words.map(([w,c])=>`「${esc(w)}」×${c}`).join("、")} ― この対象を記録するとき、君の観測はここへ収束している。`);
+if(total>=4){let half=Math.floor(total/2),first=notes.slice(0,half),second=notes.slice(half);
+let share=(a,type)=>a.length?Math.round(a.filter(n=>n.type===type).length/a.length*100):0;
+let h1=share(first,"未検証の仮説"),h2=share(second,"未検証の仮説"),f1=share(first,"観察事実"),f2=share(second,"観察事実");
+if(h2-h1>=20)lines.push(`時系列の変化：記録の後半で仮説の割合が上昇（${h1}% → ${h2}%）。観測が進むにつれ、解釈が先行し始めている兆候だ。`);
+else if(f2-f1>=20)lines.push(`時系列の変化：記録の後半で事実の割合が上昇（${f1}% → ${f2}%）。観測姿勢が研ぎ澄まされている。`);
+else lines.push("時系列の変化：前半と後半で記録の性質に大きな偏りはなし。観測は安定している。");
+lines.push(`観測期間：${esc(notes[0].at)} 〜 ${esc(notes[total-1].at)}（全${total}件）。`)}
+let sug=[];
+if(st===0)sug.push("本人の発言を、一言そのまま書き留める観測を追加せよ");
+if(h>=f&&total>=3)sug.push("溜まった仮説のうち1つを選び、それを検証できる具体的な行動観察を行え");
+if(total<5)sug.push(`記録がまだ浅い。あと${5-total}件の蓄積を推奨する`);
+if(words.length)sug.push(`頻出テーマ「${esc(words[0][0])}」が現れる場面の、前後の文脈を重点観測せよ`);
+if(!sug.length)sug.push("現在の観測軸を維持し、異なる場面（時間帯・相手・状況）での記録を追加せよ");
+lines.push(`次の観測ポイント：${sug[0]}。`);
+return lines}
 function people(){return shell("PERSONA BUREAU // 02","人物分析局","観測事実と仮説を分離せよ。ここで扱うのは記録であり、断定ではない。",`
-<div class="notice">⚠ 分析は入力された観察記録の整理を目的とします。限られた情報から人格・意図・診断を断定しないでください。</div>
+<div class="notice">⚠ 分析と示唆は入力された観察記録の整理を目的とします。限られた情報から人格・意図・診断を断定しないでください。解析ユニットの示唆は、次に観測すべき点への手がかりです。</div>
 <div class="panel" style="margin-top:12px"><h3>観測対象の登録</h3><form onsubmit="addSubject(event)"><label>対象コード / 呼称</label><input id="sname" required placeholder="例：SUBJECT-07 / 灰色の観測者"><label>観測目的（任意）</label><input id="spurpose" placeholder="例：共同作業の進め方を理解する"><button class="primary" style="width:100%;margin-top:12px">対象を登録</button></form></div>
-<div class="stack">${state.subjects.map(s=>`<div class="panel"><div class="row between"><div><div class="item-title">${esc(s.name)}</div><div class="tiny">${esc(s.purpose||"観測目的未設定")} · 記録 ${s.notes.length}件</div></div><button class="small danger" onclick="deleteSubject(${s.id})">削除</button></div><form onsubmit="addObservation(event,${s.id})"><label>観測記録（事実・日時・文脈）</label><textarea id="obs-${s.id}" required placeholder="例：会議で期限の確認を提案した。"></textarea><label>記録種別</label><select id="type-${s.id}"><option>観察事実</option><option>本人の発言</option><option>未検証の仮説</option></select><button class="small primary" style="width:100%;margin-top:8px">記録を追加</button></form>
-${s.notes.length?`<div class="line"></div><h3>分析レポート（記録の要約）</h3><p class="tiny">事実 ${s.notes.filter(n=>n.type==="観察事実").length}件 / 発言 ${s.notes.filter(n=>n.type==="本人の発言").length}件 / 仮説 ${s.notes.filter(n=>n.type==="未検証の仮説").length}件</p>${s.notes.slice().reverse().map(n=>`<div class="item" style="margin-top:8px"><span class="tag ${n.type==="未検証の仮説"?"gold":""}">${esc(n.type)}</span><p>${esc(n.text)}</p><div class="tiny">${esc(n.at)}</div></div>`).join("")}`:'<p class="tiny">記録が蓄積されると、ここに整理される。</p>'}</div>`).join("")||'<div class="empty">観測対象は未登録。まず対象コードを作成せよ。</div>'}`)}
+<div class="stack">${state.subjects.map(s=>{let words=topWords(s.notes.map(n=>n.text));return `<div class="panel"><div class="row between"><div><div class="item-title">${esc(s.name)}</div><div class="tiny">${esc(s.purpose||"観測目的未設定")} · 記録 ${s.notes.length}件</div></div><button class="small danger" onclick="deleteSubject(${s.id})">削除</button></div><form onsubmit="addObservation(event,${s.id})"><label>観測記録（事実・日時・文脈）</label><textarea id="obs-${s.id}" required placeholder="例：会議で期限の確認を提案した。"></textarea><label>記録種別</label><select id="type-${s.id}"><option>観察事実</option><option>本人の発言</option><option>未検証の仮説</option></select><button class="small primary" style="width:100%;margin-top:8px">記録を追加</button></form>
+${s.notes.length?`<div class="line"></div><h3>分析レポート（記録の要約）</h3><p class="tiny">事実 ${s.notes.filter(n=>n.type==="観察事実").length}件 / 発言 ${s.notes.filter(n=>n.type==="本人の発言").length}件 / 仮説 ${s.notes.filter(n=>n.type==="未検証の仮説").length}件</p>${ratioBar(s)}${words.length?`<div style="margin-top:8px">${words.map(([w,c])=>`<span class="chip">${esc(w)} ×${c}</span>`).join("")}</div>`:""}<div class="insight"><h4>解析ユニット // INSIGHT</h4>${analyzeSubject(s).map(l=>`<p>${l}</p>`).join("")}<p class="tiny" style="margin-top:8px">※ 示唆は記録データからのルールベース生成であり、対象への断定ではない。</p></div>${s.notes.slice().reverse().map(n=>`<div class="item" style="margin-top:8px"><span class="tag ${n.type==="未検証の仮説"?"gold":""}">${esc(n.type)}</span><p>${esc(n.text)}</p><div class="tiny">${esc(n.at)}</div></div>`).join("")}`:'<p class="tiny">記録が蓄積されると、ここに整理される。</p>'}</div>`}).join("")||'<div class="empty">観測対象は未登録。まず対象コードを作成せよ。</div>'}`)}
 const morse={A:".-",B:"-...",C:"-.-.",D:"-..",E:".",F:"..-.",G:"--.",H:"....",I:"..",J:".---",K:"-.-",L:".-..",M:"--",N:"-.",O:"---",P:".--.",Q:"--.-",R:".-.",S:"...",T:"-",U:"..-",V:"...-",W:".--",X:"-..-",Y:"-.--",Z:"--..",0:"-----",1:".----",2:"..---",3:"...--",4:"....-",5:".....",6:"-....",7:"--...",8:"---..",9:"----."};
+const wabun={"ア":"--.--","イ":".-","ウ":"..-","エ":"-.---","オ":".-...","カ":".-..","キ":"-.-..","ク":"...-","ケ":"-.--","コ":"----","サ":"-.-.-","シ":"--.-","ス":"---.-","セ":".---.","ソ":"---.","タ":"-.","チ":"..-.","ツ":".--.","テ":".-.--","ト":"..-..","ナ":".-.","ニ":"-.-.","ヌ":"....","ネ":"--.-","ノ":".-.-.","ハ":"-...","ヒ":"--..-","フ":"--..","ヘ":".","ホ":"-..","マ":"-..-","ミ":"..-.-","ム":"-","メ":"-.--.","モ":"-.-.-","ヤ":".--","ユ":"-..--","ヨ":"--","ラ":"...","リ":"--.","ル":"-.--.","レ":"---","ロ":".-.-","ワ":"-.-","ヰ":".-..-","ヱ":".--..","ヲ":".---","ン":".-.-.","゛":"..","゜":"..--.","ー":".--.-","、":".-.-.-","。":".-.-.."};
+const dakutenMap={"ガ":"カ","ギ":"キ","グ":"ク","ゲ":"ケ","ゴ":"コ","ザ":"サ","ジ":"シ","ズ":"ス","ゼ":"セ","ゾ":"ソ","ダ":"タ","ヂ":"チ","ヅ":"ツ","デ":"テ","ド":"ト","バ":"ハ","ビ":"ヒ","ブ":"フ","ベ":"ヘ","ボ":"ホ"};
+const handakutenMap={"パ":"ハ","ピ":"ヒ","プ":"フ","ペ":"ヘ","ポ":"ホ"};
+const smallKanaMap={"ァ":"ア","ィ":"イ","ゥ":"ウ","ェ":"エ","ォ":"オ","ッ":"ツ","ャ":"ヤ","ュ":"ユ","ョ":"ヨ","ヮ":"ワ"};
+const revMorse={};for(let[k,v]of Object.entries(morse))revMorse[v]=k;for(let[k,v]of Object.entries(wabun))if(!(v in revMorse))revMorse[v]=k;
 function caesar(s,n){return s.replace(/[a-z]/gi,c=>String.fromCharCode((c===c.toUpperCase()?65:97)+(c.charCodeAt(0)-(c===c.toUpperCase()?65:97)+n+26)%26))}
-function encode(){let s=$("#cipherInput").value, mode=$("#cipherMode").value;let out="";if(mode==="caesar")out=caesar(s,3);else if(mode==="reverse")out=[...s].reverse().join("");else if(mode==="morse")out=s.toUpperCase().split("").map(c=>c===" " ? "/" : (morse[c]||"·")).join(" ");else out=s.toUpperCase().split("").map(c=>c===" "?" ":String.fromCharCode(65+(c.charCodeAt(0)-65+13+26)%26)).join("");cipherResult=out;$("#cipherOutput").value=out;log("暗号文を生成",mode);save()}
-function decode(){let s=$("#cipherOutput").value,mode=$("#cipherMode").value;let out="";if(mode==="caesar")out=caesar(s,-3);else if(mode==="reverse")out=[...s].reverse().join("");else if(mode==="morse"){let rev=Object.fromEntries(Object.entries(morse).map(([k,v])=>[v,k]));out=s.split(" ").map(c=>c==="/"?" ":(rev[c]||"�")).join("")}else out=caesar(s,13);$("#cipherInput").value=out;toast("復号結果を入力欄に戻しました")}
+function toKatakana(s){return s.replace(/[ぁ-ん]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60))}
+function morseEncode(s){let out=[];for(let ch of toKatakana(s)){if(ch===" "||ch==="　"){out.push("/");continue}
+if(dakutenMap[ch]){out.push(wabun[dakutenMap[ch]],"..");continue}
+if(handakutenMap[ch]){out.push(wabun[handakutenMap[ch]],"..--.");continue}
+if(smallKanaMap[ch])ch=smallKanaMap[ch];
+let up=ch.toUpperCase();
+if(morse[up]){out.push(morse[up]);continue}
+if(wabun[ch]){out.push(wabun[ch]);continue}}
+return out.join(" ")}
+function morseDecode(s){return s.trim().split(/\s+/).map(tok=>tok==="/"?" ":(revMorse[tok]||"�")).join("")}
+function b64enc(s){let bytes=new TextEncoder().encode(s);let bin="";bytes.forEach(b=>bin+=String.fromCharCode(b));return btoa(bin)}
+function b64dec(s){let bin=atob(s.trim());let bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));return new TextDecoder().decode(bytes)}
+function cipherShiftVal(){let el=$("#cipherShift");return el?parseInt(el.value,10)||3:3}
+function encode(){let s=$("#cipherInput").value, mode=$("#cipherMode").value;let out="";if(mode==="caesar")out=caesar(s,cipherShiftVal());else if(mode==="rot13")out=caesar(s,13);else if(mode==="reverse")out=[...s].reverse().join("");else if(mode==="base64"){try{out=b64enc(s)}catch{toast("符号化に失敗しました");return}}else if(mode==="morse")out=morseEncode(s);cipherResult=out;$("#cipherOutput").value=out;log("暗号文を生成",mode);save()}
+function decode(){let s=$("#cipherOutput").value,mode=$("#cipherMode").value;let out="";if(mode==="caesar")out=caesar(s,-cipherShiftVal());else if(mode==="rot13")out=caesar(s,13);else if(mode==="reverse")out=[...s].reverse().join("");else if(mode==="base64"){try{out=b64dec(s)}catch{toast("復号に失敗。Base64形式を確認せよ");return}}else if(mode==="morse")out=morseDecode(s);$("#cipherInput").value=out;toast("復号結果を入力欄に戻しました")}
+let playTimer=null,playing=false,audioCtx=null;
+function beep(ms){try{audioCtx=audioCtx||new(window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==="suspended")audioCtx.resume();let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.value=620;let t=audioCtx.currentTime;g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.15,t+0.01);g.gain.exponentialRampToValueAtTime(0.0001,t+ms/1000);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(t+ms/1000+0.05)}catch{}}
+function lamp(on){let l=$("#signalLamp");if(l)l.classList.toggle("on",!!on);let fx=$("#flashFx"),tgl=$("#flashToggle");if(fx)fx.style.opacity=(on&&tgl&&tgl.checked)?"1":"0"}
+function stopMorse(){if(playTimer){clearTimeout(playTimer);playTimer=null}playing=false;lamp(false);let b=$("#playBtn");if(b)b.textContent="▶ 通信開始（信号を再生）"}
+function togglePlay(){if(playing){stopMorse();toast("通信を中断した");return}playMorse()}
+function playMorse(){let code=($("#cipherOutput")?$("#cipherOutput").value:"").trim();if(!code||!/^[.\-/]+$/.test(code)){toast("まずモールス信号を生成してください");return}
+let evs=[];for(let tok of code.split(/\s+/)){if(tok==="/"){evs.push({on:false,u:4});continue}for(let sym of tok){evs.push({on:true,u:sym==="-"?3:1});evs.push({on:false,u:1})}evs.push({on:false,u:2})}
+playing=true;let b=$("#playBtn");if(b)b.textContent="■ 送信中…（タップで停止）";
+let unit=90,i=0;let step=()=>{if(!playing)return;if(i>=evs.length){stopMorse();toast("通信終了 ― 信号は闇に溶けた");return}let e=evs[i++];lamp(e.on);if(e.on)beep(e.u*unit);playTimer=setTimeout(step,e.u*unit)};step()}
 function cipher(){return shell("CRYPTIC TRANSMISSION // 03","極秘通信室","古典暗号による演出機能。重要情報の保護には使用しないこと。",`
-<div class="notice">この暗号は雰囲気を楽しむためのものです。シーザー暗号・ROT13・反転・モールス信号は安全な暗号化ではありません。</div>
-<div class="panel" style="margin-top:12px"><label>変換方式</label><select id="cipherMode"><option value="caesar">シーザー暗号（+3）</option><option value="rot13">ROT13</option><option value="reverse">文字列反転</option><option value="morse">モールス信号（英数字）</option></select><label>平文 / 暗号文</label><textarea id="cipherInput" placeholder="通信内容を入力"></textarea><div class="row" style="margin:10px 0"><button class="primary" style="flex:1" onclick="encode()">暗号化</button><button style="flex:1" onclick="decode()">復号を試みる</button></div><label>生成結果</label><textarea id="cipherOutput" placeholder="変換結果がここに表示される"></textarea><div class="row"><button style="flex:1" onclick="copyOutput()">結果をコピー</button><button style="flex:1" onclick="swapCipher()">結果を入力欄へ</button></div></div>
+<div class="notice">この暗号は雰囲気を楽しむためのものです。シーザー暗号・ROT13・反転・Base64・モールス信号は安全な暗号化ではありません。</div>
+<div class="panel" style="margin-top:12px"><label>変換方式</label><select id="cipherMode"><option value="caesar">シーザー暗号</option><option value="rot13">ROT13</option><option value="reverse">文字列反転</option><option value="base64">Base64（日本語対応）</option><option value="morse">モールス信号（英数字・和文対応）</option></select><label>シフト量（シーザー暗号用：1〜25）</label><select id="cipherShift">${Array.from({length:25},(_,i)=>`<option value="${i+1}" ${i+1===3?"selected":""}>${i+1}</option>`).join("")}</select><label>平文 / 暗号文</label><textarea id="cipherInput" placeholder="通信内容を入力。モールス信号なら日本語の文章でもよい"></textarea><div class="row" style="margin:10px 0"><button class="primary" style="flex:1" onclick="encode()">暗号化</button><button style="flex:1" onclick="decode()">復号を試みる</button></div><label>生成結果</label><textarea id="cipherOutput" placeholder="変換結果がここに表示される"></textarea><div class="row"><button style="flex:1" onclick="copyOutput()">結果をコピー</button><button style="flex:1" onclick="swapCipher()">結果を入力欄へ</button></div></div>
+<div class="panel"><h3>📡 信号送出 // SIGNAL TRANSMISSION</h3><p class="tiny">生成したモールス信号を、音と光でそのまま送出する。通信開始 ― 意味を解する者は、そう多くない。</p><div class="row" style="gap:12px"><div id="signalLamp" class="lamp"></div><button class="primary" style="flex:1" id="playBtn" onclick="togglePlay()">▶ 通信開始（信号を再生）</button></div><label class="row" style="gap:8px;margin-top:10px;align-items:center"><input type="checkbox" id="flashToggle" checked style="width:auto;flex:none"> 画面の点滅演出を有効化</label><p class="tiny">※ 再生にはモールス信号の生成結果が必要。音量に注意せよ。</p></div>
 <div class="panel"><h3>秘密メッセージを送る</h3><p class="tiny">暗号文をコピーし、普段使っているメッセージアプリに貼り付けて送信する。</p><button class="primary" style="width:100%" onclick="copyOutput()">▣ 暗号文をコピー</button></div>
-<div class="panel"><h3>モールス早見表</h3><div class="grid">${Object.entries(morse).slice(0,26).map(([k,v])=>`<div class="item row between"><b>${k}</b><span class="mono">${v}</span></div>`).join("")}</div><p class="tiny">日本語のモールス符号変換には未対応。</p></div>`)}
+<div class="panel"><h3>モールス早見表（英数字）</h3><div class="grid">${Object.entries(morse).map(([k,v])=>`<div class="item row between"><b>${k}</b><span class="mono">${v}</span></div>`).join("")}</div></div>
+<div class="panel"><h3>モールス早見表（和文）</h3><div class="grid">${Object.entries(wabun).map(([k,v])=>`<div class="item row between"><b>${k}</b><span class="mono">${v.replace(/-/g,"－").replace(/\./g,"・")}</span></div>`).join("")}</div><p class="tiny">ひらがなはカタカナに寄せて変換する。濁点・半濁点は符号を後置する。復号時は英数字を優先する。</p></div>`)}
 function copyOutput(){let s=$("#cipherOutput").value;if(!s){toast("先に暗号文を生成してください");return}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(s).then(()=>toast("暗号文をコピーしました")).catch(()=>fallbackCopy(s));else fallbackCopy(s)}
 function fallbackCopy(s){let t=document.createElement("textarea");t.value=s;document.body.appendChild(t);t.select();try{document.execCommand("copy");toast("暗号文をコピーしました")}catch{toast("コピーできません。テキストを長押ししてコピーしてください")}t.remove()}
 function swapCipher(){if($("#cipherOutput").value)$("#cipherInput").value=$("#cipherOutput").value}
+function docCard(d){return `<article class="item"><div class="row between"><div class="item-title">${esc(d.title)}</div><span class="tag ${["極秘","最高機密"].includes(d.level)?"red":"gold"}">${esc(d.level)}</span></div><p class="docbody">${esc(d.body).replace(/\[\[([^\]]+)\]\]/g,'<span class="redacted" onclick="this.classList.toggle(\'revealed\')">$1</span>')}</p><div class="row" style="margin-top:10px"><button class="small" onclick="redactDoc(${d.id})">本文を黒塗り</button><button class="small danger" onclick="deleteDoc(${d.id})">文書を破棄</button></div></article>`}
+function renderDocs(){let q=docQuery.trim();let list=state.docs.filter(d=>!q||d.title.includes(q)||d.body.includes(q));let el=$("#docList");if(el)el.innerHTML=list.map(docCard).join("")||'<div class="empty">条件に一致する文書は存在しない。</div>'}
 function archive(){return shell("SEALED ARCHIVE // 04","機密文書庫","情報の分類は、情報を守るために存在する。",`
 <div class="panel"><h3>文書を登録</h3><form onsubmit="addDoc(event)"><label>文書名</label><input id="dtitle" required placeholder="例：作戦指令書 001"><label>機密区分</label><select id="dlevel"><option>公開</option><option>関係者限り</option><option>機密</option><option>極秘</option><option>最高機密</option></select><label>文書本文</label><textarea id="dbody" required placeholder="記録する内容"></textarea><button class="primary" style="width:100%;margin-top:10px">文書を封印</button></form></div>
-<div class="stack">${state.docs.map(d=>`<article class="item"><div class="row between"><div class="item-title">${esc(d.title)}</div><span class="tag ${["極秘","最高機密"].includes(d.level)?"red":"gold"}">${esc(d.level)}</span></div><p class="docbody">${esc(d.body).replace(/\[\[([^\]]+)\]\]/g,'<span class="redacted" onclick="this.classList.toggle(\'revealed\')">$1</span>')}</p><div class="row" style="margin-top:10px"><button class="small" onclick="redactDoc(${d.id})">本文を黒塗り</button><button class="small danger" onclick="deleteDoc(${d.id})">文書を破棄</button></div></article>`).join("")||'<div class="empty">文書庫は空である。</div>'}
-<div class="tiny">黒塗り表示の文字をタップすると、隠された内容を確認できる。</div>`)}
+<div class="row" style="margin:0 0 12px"><span class="tiny" style="flex:none">🔍 文書を検索</span><input id="docSearch" style="flex:1" placeholder="タイトル・本文のキーワード" value="${esc(docQuery)}" oninput="docQuery=this.value;renderDocs()"></div>
+<div class="stack" id="docList">${state.docs.filter(d=>!docQuery.trim()||d.title.includes(docQuery.trim())||d.body.includes(docQuery.trim())).map(docCard).join("")||'<div class="empty">文書庫は空である。</div>'}</div>
+<div class="tiny" style="margin-top:10px">黒塗り表示の文字をタップすると、隠された内容を確認できる。</div>`)}
 function settings(){return shell("ORGANIZATION PROFILE // 05","組織設定","組織の名、紋章、使命。すべては自ら定義する。",`
 <div class="panel"><div class="seal" id="previewCrest">${esc(state.crest)}</div><form onsubmit="saveSettings(event)"><label>組織名</label><input id="org" required maxlength="40" value="${esc(state.org)}"><label>コードネーム</label><div class="row"><input id="operator" maxlength="30" value="${esc(state.operator)}"><button type="button" class="small" onclick="generateCode()">自動生成</button></div><label>組織の使命</label><textarea id="mission">${esc(state.mission)}</textarea><label>紋章</label><div class="grid three">${["✧","☾","◈","⌘","⛧","⚙","◉","△","✦","☄","♜","⟁"].map(c=>`<button type="button" class="${state.crest===c?"primary":""}" onclick="selectCrest('${c}')">${c}</button>`).join("")}</div><button class="primary" style="width:100%;margin-top:14px">設定を保存</button></form></div>
 <div class="panel"><h3>任務達成記録</h3><div class="metric">${state.missions.filter(m=>m.done).length}</div><p class="tiny">達成済み任務の累計 / 現在の階級：${rank()}</p><div class="line"></div><h3>データ管理</h3><p class="tiny">この端末のブラウザ内にデータを保存します。ブラウザデータを消去すると記録も消えます。</p><div class="row"><button style="flex:1" onclick="exportData()">データを書き出す</button><button class="danger" style="flex:1" onclick="resetData()">全記録を初期化</button></div><input type="file" id="importFile" accept="application/json" style="margin-top:10px" onchange="importData(event)"></div>
@@ -89,7 +244,11 @@ function addMission(e){e.preventDefault();let m={id:state.nextId++,title:$("#mti
 function toggleMission(id){let m=state.missions.find(x=>x.id===id);if(!m)return;m.done=!m.done;log(m.done?"任務達成":"任務を再開",m.title);save();if(m.done)toast("MISSION COMPLETE // 任務達成");render()}
 function deleteMission(id){if(!confirm("この任務を破棄しますか？"))return;let m=state.missions.find(x=>x.id===id);state.missions=state.missions.filter(x=>x.id!==id);log("任務破棄",m?.title||"");save();render()}
 function editPlan(id){let m=state.missions.find(x=>x.id===id);if(!m)return;let v=prompt("作戦計画（手順）を編集",m.plan||"");if(v===null)return;m.plan=v;log("作戦計画を更新",m.title);save();render()}
-function emergency(){let choices=["未確認シグナルの発信源を記録せよ","機密文書庫の整合性を点検せよ","本日の行動ログを監査せよ","作戦計画の成功条件を再確認せよ","観測対象の記録を分類せよ"];let title="【緊急】"+choices[Math.floor(Math.random()*choices.length)];state.missions.unshift({id:state.nextId++,title,priority:"最重要",due:new Date().toISOString().slice(0,10),plan:"状況を確認し、結果を記録する。",success:"確認結果を行動ログに残す",done:false,created:Date.now()});log("緊急指令を受信",title);save();toast("緊急任務を登録しました");render()}
+function emergency(){let tgt=emergencyTarget();let title,plan,success="確認結果を行動ログに残す";
+if(tgt&&tgt.kind==="overdue"){title=`回収指令：『${tgt.m.title}』の期限超過を解消せよ`;plan=`期限超過中の任務「${tgt.m.title}」（期限：${tgt.m.due}）の状況を確認し、本日中に完了させるか、再計画を記録すること。`;success="対象任務の完了、または再計画の記録"}
+else if(tgt){title=`推進指令：『${tgt.m.title}』を本日中に前進させよ`;plan=`進行中の任務「${tgt.m.title}」について、本日中に具体的な進捗を1つ生み、結果を記録すること。`;success="対象任務の進捗を1つ記録"}
+else{let choices=["未確認シグナルの発信源を記録せよ","機密文書庫の整合性を点検せよ","本日の行動ログを監査せよ","作戦計画の成功条件を再確認せよ","観測対象の記録を分類せよ"];title=""+choices[Math.floor(Math.random()*choices.length)];plan="状況を確認し、結果を記録する。"}
+state.missions.unshift({id:state.nextId++,title,priority:"最重要",due:todayStr(),plan,success,done:false,created:Date.now()});log("緊急指令を受信",title);save();toast("緊急任務を登録しました");render()}
 function addSubject(e){e.preventDefault();let s={id:state.nextId++,name:$("#sname").value.trim(),purpose:$("#spurpose").value.trim(),notes:[]};state.subjects.unshift(s);log("観測対象を登録",s.name);save();render()}
 function addObservation(e,id){e.preventDefault();let s=state.subjects.find(x=>x.id===id),txt=$("#obs-"+id).value.trim(),type=$("#type-"+id).value;if(!s||!txt)return;s.notes.push({text:txt,type,at:stamp()});log("観測記録を追加",s.name);save();render()}
 function deleteSubject(id){if(!confirm("対象とその記録を削除しますか？"))return;state.subjects=state.subjects.filter(s=>s.id!==id);log("観測対象を削除");save();render()}
@@ -97,7 +256,7 @@ function addDoc(e){e.preventDefault();state.docs.unshift({id:state.nextId++,titl
 function deleteDoc(id){if(!confirm("この文書を破棄しますか？"))return;state.docs=state.docs.filter(d=>d.id!==id);log("文書を破棄");save();render()}
 function redactDoc(id){let d=state.docs.find(x=>x.id===id);if(!d)return;let v=prompt("黒塗りにする語句を入力（本文に存在する語句）");if(!v)return;if(!d.body.includes(v)){toast("指定語句が本文にありません");return}d.body=d.body.split(v).join("[["+v+"]]");save();render()}
 function generateCode(){let a=["PHANTOM","ECLIPSE","RAVEN","OBSIDIAN","WRAITH","NOCTURNE","ZERO","VEIL","SPECTER","ONYX","VANTA","NOVA"];$("#operator").value=a[Math.floor(Math.random()*a.length)]+"-"+String(Math.floor(Math.random()*90)+10)}
-function selectCrest(c){state.crest=c;$("#previewCrest").textContent=c;document.querySelectorAll("#app .grid button").forEach(b=>b.classList.toggle("primary",b.textContent===c))}
+function selectCrest(c){state.crest=c;$("#previewCrest").textContent=c;document.querySelectorAll("#app.grid button").forEach(b=>b.classList.toggle("primary",b.textContent===c))}
 function saveSettings(e){e.preventDefault();state.org=$("#org").value.trim();state.operator=$("#operator").value.trim();state.mission=$("#mission").value.trim();log("組織設定を更新",state.org);save();render();toast("組織設定を保存しました")}
 function exportData(){let blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="nightfall-backup.json";a.click();URL.revokeObjectURL(url);toast("バックアップを出力しました")}
 function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!d.missions||!d.docs)throw Error();state={...defaults,...d};save();render();toast("バックアップを復元しました")}catch{toast("読み込めないファイルです")}};r.readAsText(f)}
